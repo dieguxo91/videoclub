@@ -2,6 +2,7 @@ package org.iesvdm.controller;
 
 import org.iesvdm.domain.Categoria;
 import org.iesvdm.dto.CategoriaDTO;
+import org.iesvdm.dto.CategoriaDTO2;
 import org.iesvdm.service.CategoriaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,9 +24,10 @@ public class CategoriaController {
 		
 		//Categoria categoria = categoriaService.one(id);
 		CategoriaDTO categoriaDTO = categoriaService.oneDTO(id);
-		
+		CategoriaDTO2 categoriaDTO2 = categoriaService.oneDTO2(id);
 		model.addAttribute("categoriaDTO", categoriaDTO);
 		model.addAttribute("prueba", "pruebaxx");
+		model.addAttribute("categoriaDTO2",categoriaDTO2);
 		return "detalle-categoria";
 	}
 	

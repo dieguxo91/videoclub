@@ -19,15 +19,25 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6" th:text="#{categoria.id}"></div>
-		<div class="col-md-6" th:text="${categoriaDTO.id}"></div>
+		<div class="col-md-6" th:text="${categoriaDTO2.id}"></div>
 	</div>
 	<div class="row">
 		<div class="col-md-6" th:text="#{categoria.nombre}"></div>
-		<div class="col-md-6" th:text="${categoriaDTO.nombre}"></div>
+		<div class="col-md-6" th:text="${categoriaDTO2.nombre}"></div>
 	</div>
 	<div class="row">
 		<div class="col-md-6" th:text="#{categoria.conteoPeliculas}"></div>
 		<div class="col-md-6" th:text="${categoriaDTO.conteoPeliculas}"></div>
+	</div>
+	
+	<div>
+	<hr>
+	<h1>Almacenes</h1>
+	<hr>
+	</div>
+	<div class="row" th:each="almacen: ${categoriaDTO2.listAlmacen}">
+			<div class="col-md-6" th:text="${almacen.id_almacen != 0 ? almacen.id_almacen : 'Sin almacen'}"></div>
+			<div class="col-md-6" th:text="${almacen.conteoPorAlm}"></div>
 	</div>
 </div>
 </body>
